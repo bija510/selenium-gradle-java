@@ -1,0 +1,38 @@
+
+plugins {
+    id 'java'
+
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    implementation group: 'org.testng', name: 'testng', version: '7.1.0'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '4.2.0'
+}
+//test {
+//    useTestNG(){
+//        suites 'testng2.xml'
+//    }
+//
+//
+//}
+
+test {
+    useTestNG()
+
+    }
+
+tasks.withType(Test) {
+    testLogging {
+        exceptionFormat "full"
+        events "started", "skipped", "passed", "failed"
+        showStandardStreams true
+    }
+}
