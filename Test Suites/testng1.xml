@@ -3,8 +3,8 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/Bijaya Chhetri/IdeaProjects/GradleProject/src/test/java">
         <classes>
-            <class name="FacebookTest"></class>
-            <class name="GooglesTest"></class>
+            <class name="SeleniumGradle.FacebookTest"></class>
+            <class name="SeleniumGradle.GooglesTest"></class>
         </classes>
 
     </test>

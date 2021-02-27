@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class Base {
+public class BaseUtility {
     public static WebDriver driver;
     public Properties prop ;
 

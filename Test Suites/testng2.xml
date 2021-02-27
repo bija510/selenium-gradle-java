@@ -4,7 +4,7 @@
     <test verbose="2" preserve-order="true" name="C:/Users/Bijaya Chhetri/IdeaProjects/GradleProject">
         <classes>
 
-            <class name="GooglesTest"/>
+            <class name="SeleniumGradle.GooglesTest"/>
             
         </classes>
     </test>
