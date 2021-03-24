@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 /*======================================================================================================
 NOTE:- No driver instance in Test class According to POM concept
-POM is also known as lazy initialization technique
+POM is also known as lazy initialization technique for Test
 ======================================================================================================*/
 
 public class FacebookTest extends BaseClass {
