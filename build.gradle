@@ -1,7 +1,7 @@
 
 plugins {
     id 'java'
-
+    id 'io.qameta.allure' version '2.11.2'
 }
 
 group 'org.example'
@@ -9,30 +9,46 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    gradlePluginPortal() // This ensures that Gradle plugins are fetched from the plugin portal
 }
 
 dependencies {
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
-    implementation group: 'org.testng', name: 'testng', version: '7.1.0'
-    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '4.2.0'
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation("org.seleniumhq.selenium:selenium-java:4.29.0")
+
+    // https://mvnrepository.com/artifact/org.testng/testng
+    // For test sources
+    testImplementation 'org.testng:testng:7.9.0' // Replace with desired version
+
+    // For main sources (if you really need it — usually not common)
+    implementation 'org.testng:testng:7.9.0'
+
+    implementation 'commons-io:commons-io:2.15.1'
+
+    testImplementation 'io.qameta.allure:allure-testng:2.24.0'
+
 }
-//test {
-//    useTestNG(){
-//        suites 'testng2.xml'
-//    }
-//
-//
-//}
+    test {
+        useTestNG()
+        useTestNG {
+            // Use command-line property if provided, else default path
+            def suiteName = System.getProperty("suiteXmlFile") ?: "src/test/resources/testng.xml"
+            def suitePath = "test-suites/${suiteName}"
+            suites suitePath
+        }
+        tasks.withType(Test).configureEach {
+            testLogging {
+                exceptionFormat "full"
+                events "started", "skipped", "passed", "failed"
+                showStandardStreams true
+            }
 
-test {
-    useTestNG()
-
+        }
     }
 
-tasks.withType(Test) {
-    testLogging {
-        exceptionFormat "full"
-        events "started", "skipped", "passed", "failed"
-        showStandardStreams true
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21) // Or your specific Java version
+        }
     }
-}

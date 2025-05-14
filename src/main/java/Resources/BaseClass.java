@@ -1,11 +1,13 @@
 package Resources;
 
-import Resources.BaseUtility;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 /**************************************************************************************
 note: while running the testNG.xml suite choose from runcinfiguration as Whole project
@@ -16,12 +18,14 @@ note: while running the testNG.xml suite choose from runcinfiguration as Whole p
  3 actionable tasks: 1 executed, 2 up-to-date
  C:\Users\Bijaya Chhetri\IdeaProjects\GradleProject>
  **************************************************************************************/
+
+
 public class BaseClass extends BaseUtility {
     @BeforeClass(alwaysRun = true)
-    public void initializeTest() throws IOException {
+    public void initializeTest() throws IOException, IOException {
         driver = initializeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS); //this is applicable to all the test
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2)); //this is applicable to all the test
     }
 
     @AfterClass(alwaysRun = true)

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Bijaya Chhetri/IdeaProjects/selenium-gradle-java/src/test/java/com/web/demo">
+        <classes>
+            <class name="com.web.demo.FacebookTest">
+                <methods>
+                    <include name="fb_signupTest"/>
+                </methods>
+            </class>
+            <class name="com.web.demo.GooglesTest">
+                <methods>
+                    <include name="lunch_google"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

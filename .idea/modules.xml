@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GradleProject.iml" filepath="$PROJECT_DIR$/.idea/modules/GradleProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/GradleProject.main.iml" filepath="$PROJECT_DIR$/.idea/modules/GradleProject.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/GradleProject.test.iml" filepath="$PROJECT_DIR$/.idea/modules/GradleProject.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/selenium-gradle-java.iml" filepath="$PROJECT_DIR$/.idea/modules/selenium-gradle-java.iml" />
     </modules>
   </component>
 </project>
